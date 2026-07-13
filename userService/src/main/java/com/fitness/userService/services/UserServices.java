@@ -5,7 +5,6 @@ import com.fitness.userService.dto.ResgisterRequest;
 import com.fitness.userService.dto.UserResponse;
 import com.fitness.userService.models.User;
 import lombok.AllArgsConstructor;
-import org.springframework.stereotype.Repository;
 import org.springframework.stereotype.Service;
 
 @AllArgsConstructor
