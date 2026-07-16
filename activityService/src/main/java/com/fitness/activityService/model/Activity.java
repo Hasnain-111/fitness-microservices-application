@@ -1,11 +1,22 @@
 package com.fitness.activityService.model;
 
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+import org.springframework.data.annotation.CreatedDate;
+import org.springframework.data.annotation.LastModifiedDate;
 import org.springframework.data.mongodb.core.mapping.Document;
+import org.springframework.data.mongodb.core.mapping.Field;
 
 import java.time.LocalDateTime;
 import java.util.Map;
 
-@Document("activities")
+@Document(collation = "activities")
+@Data
+@Builder
+@AllArgsConstructor
+@NoArgsConstructor
 public class Activity {
     private String id;
     private String userId;
@@ -13,8 +24,14 @@ public class Activity {
     private Integer duration;
     private ActivityType type;
     private LocalDateTime startTime;
+
+    @Field("metrics")
     Map<String,Object> additionalMatrices;
+
+    @CreatedDate
     private LocalDateTime createdAt;
+
+    @LastModifiedDate
     private LocalDateTime updatedAt;
 
 }
