@@ -32,8 +32,8 @@ public class ActivityService {
         activityResponse.setCaloriesBurned(savedActivity.getColoriesBurned());
         activityResponse.setAdditionalMatrices(savedActivity.getAdditionalMatrices());
         activityResponse.setCreatedAt(savedActivity.getCreatedAt());
-        activityResponse.setStartTime(activityResponse.getStartTime());
-        activityResponse.setUpdatedAt(activityResponse.getUpdatedAt());
+        activityResponse.setStartTime(savedActivity.getStartTime());
+        activityResponse.setUpdatedAt(savedActivity.getUpdatedAt());
         return  activityResponse;
     }
 }
