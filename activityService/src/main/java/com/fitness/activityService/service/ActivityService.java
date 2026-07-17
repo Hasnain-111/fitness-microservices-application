@@ -18,19 +18,26 @@ public class ActivityService {
                 userId(request.getUserId()).
                 type(request.getType()).
                 duration(request.getDuration()).
-                coloriesBurned(request.getColoriesBurned()).
+                caloriesBurned(request.getCaloriesBurned()).
                 startTime(request.getStartTime()).
-                additionalMatrices(request.getAdditionalMatrices()).build();
+                additionalMetrics(request.getAdditionalMetrics()).build();
 
         Activity savedActivity = activityRepository.save(activity);
+
+
+        System.out.println("Saved Activity:");
+        System.out.println(savedActivity);
+
+        System.out.println("All Activities:");
+        System.out.println(activityRepository.findAll());
 
         ActivityResponse activityResponse = new ActivityResponse();
         activityResponse.setId(savedActivity.getId());
         activityResponse.setUserId(savedActivity.getUserId());
         activityResponse.setDuration(savedActivity.getDuration());
         activityResponse.setType(savedActivity.getType());
-        activityResponse.setCaloriesBurned(savedActivity.getColoriesBurned());
-        activityResponse.setAdditionalMatrices(savedActivity.getAdditionalMatrices());
+        activityResponse.setCaloriesBurned(savedActivity.getCaloriesBurned());
+        activityResponse.setAdditionalMetrics(savedActivity.getAdditionalMetrics());
         activityResponse.setCreatedAt(savedActivity.getCreatedAt());
         activityResponse.setStartTime(savedActivity.getStartTime());
         activityResponse.setUpdatedAt(savedActivity.getUpdatedAt());

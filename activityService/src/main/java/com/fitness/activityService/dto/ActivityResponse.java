@@ -16,5 +16,5 @@ public class ActivityResponse {
     private LocalDateTime startTime;
     private LocalDateTime createdAt;
     private LocalDateTime updatedAt;
-    Map<String , Object> additionalMatrices;
+    private Map<String , Object> additionalMetrics;
 }

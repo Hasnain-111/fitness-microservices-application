@@ -1,5 +1,6 @@
 package com.fitness.activityService.dto;
 
+import com.fasterxml.jackson.annotation.JsonAlias;
 import com.fitness.activityService.model.ActivityType;
 import lombok.Data;
 
@@ -12,8 +13,10 @@ public class ActivityRequest {
     private String userId;
     private ActivityType type;
     private Integer duration;
-    private Integer coloriesBurned;
+    @JsonAlias("coloriesBurned")
+    private Integer caloriesBurned;
     private LocalDateTime startTime;
-    Map<String, Object> additionalMatrices;
+    @JsonAlias("additionalMatrices")
+    private Map<String, Object> additionalMetrics;
 
 }
