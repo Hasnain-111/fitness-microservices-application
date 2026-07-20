@@ -5,6 +5,7 @@ import com.fitness.userService.dto.ResgisterRequest;
 import com.fitness.userService.dto.UserResponse;
 import com.fitness.userService.models.User;
 import lombok.AllArgsConstructor;
+import org.jspecify.annotations.Nullable;
 import org.springframework.stereotype.Service;
 
 @AllArgsConstructor
@@ -48,5 +49,9 @@ public class UserServices {
        userResponse.setUpdatedAt(user.getUpdatedAt());
        userResponse.setCreatedAt(user.getCreatedAt());
        return userResponse;
+    }
+
+    public Boolean existByUserId(String userId) {
+        return  repository.existsById(userId);
     }
 }
