@@ -4,12 +4,12 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class AiserverApplication {
+public class AiserviceApplication {
 
 
 
 	public static void main(String[] args) {
-		SpringApplication.run(AiserverApplication.class, args);
+		SpringApplication.run(AiserviceApplication.class, args);
 	}
 
 }
